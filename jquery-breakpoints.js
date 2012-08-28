@@ -30,7 +30,7 @@
 
 		var currentBreakpoint, floatingBreakpoint;
 
-		floatingBreakpoint = 0;
+		floatingBreakpoint = Math.max.apply(Math, settings.breakpoints);
 
 		//initialise
 		getBreakpoint(true);
@@ -60,12 +60,12 @@
 
 			}
 
-			currentBreakpoint = 0;
+			currentBreakpoint = Math.max.apply(Math, settings.breakpoints);
 
 			// Set the c variable to the current media width
 			$.each(settings.breakpoints, function(key, value){
 				
-				if(parseInt($(window).width()) >= parseInt(value) && parseInt(currentBreakpoint) <= parseInt(value)){
+				if(parseInt($(window).width()) <= parseInt(value) && parseInt(currentBreakpoint) >= parseInt(value)){
 					currentBreakpoint = value;
 				}
 
