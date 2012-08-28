@@ -8,19 +8,19 @@ This is a small jQuery plugin to provide simple event handlers when a user resiz
 To set it up just attach the minified version of the script to your page and initialise it by attaching it to the window like this:
 
 	$(function(){
-    $(window).breakpoints({
-        breakpoints : [360, 480, 580, 660, 800, 900]
-    });
+    	$(window).breakpoints({
+        	breakpoints : [360, 480, 580, 660, 800, 900]
+    	});
 	});
 
 It will then set up breakpoints based on the numbers you pass. It then loops through the values comparing them to the window width and sets a `window.currentBreakpoint` variable depending on how wide the window is. It will set the variable to the closest breakpoint **below** the window width. This is similar to a `@media screen and (max-width: 600px)` declaration. You Can tell it not to set the variable or fire the events by passing the parameter `setVar` or `setEvents` as false.
 
 	$(function(){
-    $(window).breakpoints({
-    	breakpoints : [360, 480, 580, 660, 800, 900],
+    	$(window).breakpoints({
+    		breakpoints : [360, 480, 580, 660, 800, 900],
 			setVar : false,
 			setEvents : false	
-    });
+    	});
 	});
 
 ## Usage
